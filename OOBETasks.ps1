@@ -12,14 +12,14 @@ $OOBEScript =@"
 `$Global:Transcript = "`$((Get-Date).ToString('yyyy-MM-dd-HHmmss'))-OOBEScripts.log"
 Start-Transcript -Path (Join-Path "`$env:ProgramData\Microsoft\IntuneManagementExtension\Logs\OSD\" `$Global:Transcript) -ErrorAction Ignore | Out-Null
 
-Write-Host -ForegroundColor DarkGray "Installing NuGet PS Module"
-Start-Process PowerShell -ArgumentList "-NoLogo -Command {Set-ExecutionPolicy RemoteSigned -Force}" ; Start-Process PowerShell -ArgumentList "-NoLogo -Command {Install-Module -Name PowerShellGet -Force -AllowClobber -Scope CurrentUser}" ; Start-Process PowerShell -ArgumentList "-NoLogo -Command {Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -Scope CurrentUser}"
-
 Write-Host -ForegroundColor DarkGray "Installing AutopilotOOBE PS Module"
 Start-Process PowerShell -ArgumentList "-NoL -C Install-Module AutopilotOOBE -Force -Verbose" -Wait
 
 Write-Host -ForegroundColor DarkGray "Installing OSD PS Module"
 Start-Process PowerShell -ArgumentList "-NoL -C Install-Module OSD -Force -Verbose" -Wait
+
+Write-Host -ForegroundColor DarkGray "Running OOBE"
+Start-Process PowerShell Start-OSDPad -RepoOwner MyOLC -RepoName MyScripts -BrandingTitle "Our Learning Cloud - Bhavin Patel" -OAuth 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 -hide script -BrandingColor Magenta
 
 Write-Host -ForegroundColor DarkGray "Executing Keyboard Language Skript"
 Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/AkosBakos/OSDCloud/main/Set-KeyboardLanguage.ps1" -Wait
