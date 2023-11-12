@@ -19,7 +19,8 @@ Write-Host -ForegroundColor DarkGray "Installing AutopilotOOBE PS Module"
 Start-Process PowerShell -ArgumentList "-NoL -C Install-Module AutopilotOOBE -Force -Verbose" -Wait
 
 Write-Host -ForegroundColor DarkGray "Installing OSD PS Module"
-Start-Process PowerShell -ArgumentList "-NoL -C Install-Module OSD -Force -Verbose" -Wait
+Start-Process PowerShell -ArgumentList "-NoLogo -Command {Install-Module OSD -Force -Verbose}; Import-Module OSD" -Wait
+
 
 Write-Host -ForegroundColor DarkGray "Executing Autopilot Check Script"
 Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/MyOLC/OSDCloud/Main/check-autopilotprereq.ps1" -Wait
