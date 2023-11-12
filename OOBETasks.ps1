@@ -13,7 +13,7 @@ $OOBEScript =@"
 Start-Transcript -Path (Join-Path "`$env:ProgramData\Microsoft\IntuneManagementExtension\Logs\OSD\" `$Global:Transcript) -ErrorAction Ignore | Out-Null
 
 Write-Host -ForegroundColor DarkGray "Installing NuGet PS Module"
-Start-Process PowerShell -ArgumentList "-NoLogo -ExecutionPolicy Bypass -Command {Install-Module -Name PowerShellGet -Force -AllowClobber -Scope CurrentUser -Verbose; Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -Scope CurrentUser -Verbose;}" -Wait
+Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/MyOLC/Win11/main/NuGet.ps1" -Wait
 
 Write-Host -ForegroundColor DarkGray "Installing AutopilotOOBE PS Module"
 Start-Process PowerShell -ArgumentList "-NoL -C Install-Module AutopilotOOBE -Force -Verbose" -Wait
