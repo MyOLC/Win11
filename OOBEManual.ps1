@@ -1,1 +1,0 @@
-Start-OSDPad -RepoOwner MyOLC -RepoName MyScripts -BrandingTitle 'Our Learning Cloud - Bhavin Patel' -OAuth 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 -hide script -BrandingColor Magenta
