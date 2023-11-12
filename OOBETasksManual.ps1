@@ -24,7 +24,7 @@ Start-Process PowerShell -ArgumentList "-NoL -C Install-Module OSD -Force -Verbo
 Write-Host -ForegroundColor DarkGray "Executing Autopilot Check Script"
 Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/MyOLC/OSDCloud/Main/check-autopilotprereq.ps1" -Wait
 
-Write-Host -ForegroundColor DarkGray "Running OOBE"
+Write-Host -ForegroundColor DarkGray "Running OOBE Scripts (Manual)"
 PowerShell Start-OSDPad -RepoOwner MyOLC -RepoName Project -BrandingTitle OurLearningCloud -hide script -BrandingColor Magenta
 
 Write-Host -ForegroundColor DarkGray "Executing Cleanup Script"
