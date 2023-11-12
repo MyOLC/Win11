@@ -15,9 +15,6 @@ Start-Transcript -Path (Join-Path "`$env:ProgramData\Microsoft\IntuneManagementE
 Write-Host -ForegroundColor DarkGray "PowerShellGet 2.2.5 or greater is installed"
 Start-Process PowerShell -ArgumentList "-NoL -C Install-Package -Name PowerShellGet -MinimumVersion 2.2.5 -Force -Confirm:$false -Source PSGallery | Out-Null
 
-Install-Package -Name PowerShellGet -MinimumVersion 2.2.5 -Force -Confirm:$false -Source PSGallery | Out-Null
-Start-Process PowerShell -ArgumentList "-NoL -C Install-Module AutopilotOOBE -Force -Verbose" -Wait
-
 Write-Host -ForegroundColor DarkGray "Installing OSD PS Module"
 Start-Process PowerShell -ArgumentList "-NoL -C Install-Module OSD -Force -Verbose" -Wait
 
