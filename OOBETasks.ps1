@@ -22,7 +22,7 @@ Write-Host -ForegroundColor DarkGray "Executing Autopilot Check Script"
 Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/MyOLC/OSDCloud/Main/check-autopilotprereq.ps1" -Wait
 
 Write-Host -ForegroundColor DarkGray "Running OOBE"
-Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/MyOLC/OSDCloud/Main/check-autopilotprereq.ps1" -Wait
+Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/MyOLC/Project/main/OOBEDeployV1.ps1" -Wait
 
 Write-Host -ForegroundColor DarkGray "Executing Cleanup Script"
 Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/MyOLC/Project/main/OOBEDeployV1.ps1" -Wait
