@@ -13,14 +13,13 @@ $OOBEScript =@"
 Start-Transcript -Path (Join-Path "`$env:ProgramData\Microsoft\IntuneManagementExtension\Logs\OSD\" `$Global:Transcript) -ErrorAction Ignore | Out-Null
 
 Write-Host -ForegroundColor DarkGray "Installing NuGet PS Module"
-Start-Process PowerShell -ArgumentList "-NoL -C Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force" -Wait
+Start-Process PowerShell -ArgumentList "-NoLogo -Command {Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force}; Import-PackageProvider -Name NuGet -Force" -Wait
 
 Write-Host -ForegroundColor DarkGray "Installing AutopilotOOBE PS Module"
 Start-Process PowerShell -ArgumentList "-NoL -C Install-Module AutopilotOOBE -Force -Verbose" -Wait
 
 Write-Host -ForegroundColor DarkGray "Installing OSD PS Module"
 Start-Process PowerShell -ArgumentList "-NoLogo -Command {Install-Module OSD -Force -Verbose}; Import-Module OSD" -Wait
-
 
 Write-Host -ForegroundColor DarkGray "Executing Autopilot Check Script"
 Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/MyOLC/OSDCloud/Main/check-autopilotprereq.ps1" -Wait
