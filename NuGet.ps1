@@ -13,7 +13,7 @@ function Step-oobePackageManagement {
     [CmdletBinding()]
     param ()
     if ($env:UserName -eq 'defaultuser0') {
-        if (Get-PackageProvider -Name NuGet -ListAvailable | Where-Object {$_.Version -ge '2.8.5.201'}) {
+        if (Get-PackageProvider -Name NuGet) {
             Write-Host -ForegroundColor Cyan 'NuGet 2.8.5.201 or greater is installed'
         }
         else {
