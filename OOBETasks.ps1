@@ -19,7 +19,7 @@ Write-Host -ForegroundColor DarkGray "Installing OSD PS Module"
 Start-Process PowerShell -ArgumentList "-NoL -C Install-Module OSD -Force -Verbose" -Wait
 
 Write-Host -ForegroundColor DarkGray "Running OOBE"
-PowerShell Start-OSDPad -RepoOwner MyOLC -RepoName MyScripts -BrandingTitle "Our Learning Cloud - Bhavin Patel" -OAuth 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 -hide script -BrandingColor Magenta
+PowerShell Start-OSDPad -RepoOwner MyOLC -RepoName MyScripts -BrandingTitle OurLearningCloud-BhavinPatel -OAuth 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 -hide script -BrandingColor Magenta
 
 Write-Host -ForegroundColor DarkGray "Executing Keyboard Language Skript"
 Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/AkosBakos/OSDCloud/main/Set-KeyboardLanguage.ps1" -Wait
