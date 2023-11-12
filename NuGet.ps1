@@ -13,7 +13,7 @@ function Step-oobePackageManagement {
     [CmdletBinding()]
     param ()
             Write-Host -ForegroundColor Cyan 'Install-Package PackageManagement,PowerShellGet'
-            Install-Package -Name NuGet -MinimumVersion 2.8.5.201 -Force -Confirm:$false -Source PSGallery | Out-Null
+            Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force | Out-Null
     
             Write-Host -ForegroundColor Cyan 'Import-Module NuGet'
             Import-Module PackageManagement,PowerShellGet -Force
