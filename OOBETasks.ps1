@@ -22,10 +22,10 @@ Write-Host -ForegroundColor DarkGray "Executing Autopilot Check Script"
 Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/MyOLC/OSDCloud/Main/check-autopilotprereq.ps1" -Wait
 
 Write-Host -ForegroundColor DarkGray "Running OOBE"
-PowerShell Start-OSDPad -RepoOwner MyOLC -RepoName Project -BrandingTitle OurLearningCloud -hide script -BrandingColor Magenta
+Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/MyOLC/OSDCloud/Main/check-autopilotprereq.ps1" -Wait
 
 Write-Host -ForegroundColor DarkGray "Executing Cleanup Script"
-Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/MyOLC/OSDCloud/Main/CleanUp.ps1" -Wait
+Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/MyOLC/Project/main/OOBEDeployV1.ps1" -Wait
 
 # Cleanup scheduled Tasks
 Write-Host -ForegroundColor DarkGray "Unregistering Scheduled Tasks"
